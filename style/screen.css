@@ -1,0 +1,358 @@
+:root {
+    --main-accent-color: #1ed760;
+    --main-lightdark-color: #d8d8d8;
+    --main-lightpure-color: #fff;
+    --main-darklight-color: #3d3d3d;
+    --main-dark-color: #2c2c2c;
+    --main-darkerdark-color: #202020;
+}
+
+html {
+    height: 100%;
+}
+
+.btn {
+    border: solid thin var(--main-lightdark-color);
+    color: var(--main-accent-color);
+    border-radius: 1.25rem;
+    height: 2.5rem;
+}
+
+.btn:hover {
+    color: var(--main-lightdark-color);
+}
+
+.btn.solid {
+    border: solid thin var(--main-accent-color);
+    background-color: var(--main-accent-color);
+    color: var(--main-lightdark-color)
+}
+
+.btn.solid:hover {
+    border: solid thin var(--main-lightdark-color);
+    color: var(--main-accent-color);
+    background-color: var(--main-dark-color);
+}
+
+.btn.more {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.5rem;
+    /* border-radius: 50%; */
+    color: var(--main-lightdark-color);
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+body {
+    background-color: lightgrey;
+    font-family: "Montserrat", sans-serif;
+}
+
+#container {
+    background-color: aqua;
+}
+
+aside {
+    background-color: var(--main-darkerdark-color);
+    color: var(--main-lightdark-color);
+    padding-top: 1rem;
+    z-index: 4;
+}
+
+aside h1 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-transform: capitalize;
+}
+
+aside li {
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+aside li>a {
+    color: var(--main-lightdark-color);
+    display: block;
+}
+
+aside li.active {
+    border-left: solid 0.3rem var(--main-accent-color);
+    left: -1rem;
+    position: relative;
+}
+
+aside li.active a {
+    color: var(--main-lightpure-color);
+    padding-left: 0.7rem;
+}
+
+aside li>a:hover {
+    color: var(--main-lightpure-color);
+    text-decoration: none;
+}
+
+main {
+    background-color: red;
+}
+
+main>header {
+    background-color: var(--main-dark-color);
+    background: linear-gradient(to bottom, #7a7a7a 0%, #2c2c2c 100%);
+    color: var(--main-lightdark-color);
+    height: 50px;
+}
+
+main>header.schaduw {
+    box-shadow: 0px 2px 10px 0px rgb(0, 0, 0);
+    position: relative;
+    z-index: 3;
+}
+
+main>header>div {
+    margin: auto 0;
+}
+
+main>header form {
+    display: inline;
+}
+
+main>header form input {
+    border-radius: 50px;
+}
+
+main>header img {
+    height: 2rem;
+}
+
+main>header a {
+    color: var(--main-lightdark-color);
+}
+
+main>header a:hover {
+    color: var(--main-lightpure-color);
+}
+
+#content {
+    background-color: var(--main-dark-color);
+    overflow: auto;
+    height: calc(100% - 50px - 14vh);
+    z-index: 1;
+}
+
+#content.isscrolled div.scrolledsmall {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    z-index: 2;
+    box-shadow: 0px 2px 10px 0px rgb(0, 0, 0);
+    padding: 15px;
+}
+
+#content>header {
+    background-color: var(--main-dark-color);
+    color: var(--main-lightdark-color);
+}
+
+#content>div.scrolledsmall {
+    background-color: var(--main-dark-color);
+    display: none;
+}
+
+#content>div.scrolledsmall h1 {
+    color: var(--main-lightdark-color);
+}
+
+#content>div.scrolledsmall>div.row>div {
+    margin: auto 0;
+}
+
+/* overzicht van "covers" of moods */
+#bevat.catalogus article {
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+    background-color: var(--main-dark-color);
+}
+
+#bevat.catalogus article header {
+    position: relative;
+}
+
+#bevat.catalogus article>div.infocard {
+    color: var(--main-lightpure-color);
+}
+
+#bevat.catalogus article>div.infocard>h1 {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    text-transform: capitalize;
+    color: var(--main-lightpure-color);
+}
+
+#bevat.catalogus article>div.infocard>footer {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    margin-top: 0.5rem;
+    background-color: var(--main-dark-color);
+}
+
+#bevat.catalogus article .overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity ease 0.16s;
+}
+
+#bevat.catalogus article:hover .overlay {
+    opacity: 1;
+}
+
+#bevat.catalogus article .overlay .ctrl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+#bevat.catalogus article .overlay .ctrl .fa-play {
+    font-size: 4rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#bevat.catalogus article .overlay .ctrl i {
+    vertical-align: middle;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--main-dark-color);
+    height: 14vh;
+}
+
+footer.schaduw {
+    box-shadow: 0px 2px 10px 0px rgb(0, 0, 0);
+}
+
+#nav_playing img {
+    padding: 1rem;
+}
+
+#nav_playing .songtitle {
+    color: var(--main-lightpure-color);
+}
+
+#nav_playing .artist {
+    color: var(--main-lightdark-color);
+}
+
+#nav_ctrl {
+    color: var(--main-lightpure-color);
+}
+
+/* PLAYBAR */
+.playbar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-darklight-color);
+    border-radius: 2px;
+    position: relative;
+}
+
+.playbar>.currentposbar {
+    height: 100%;
+    width: calc(100% / 3);
+    background-color: var(--main-lightdark-color);
+    border-radius: 2px;
+}
+
+.playbar>.currentpos {
+    height: 100%;
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-lightpure-color);
+    position: absolute;
+    top: 0;
+    left: calc(100% / 3);
+    transform: translate(-50%, -25%);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity ease 0.1s;
+}
+
+.playbar:hover>.currentpos {
+    opacity: 1;
+}
+
+.playbar:hover>.currentposbar {
+    background-color: var(--main-accent-color);
+}
+
+/*start table view*/
+
+.tabelview thead {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--main-lightpure-color);
+}
+
+.tabelview thead i {
+    font-size: 1rem;
+}
+
+.tabelview tbody {
+    color: var(--main-lightpure-color);
+}
+
+.tabelview tbody tr>td.play_status {
+    text-align: center;
+}
+
+.tabelview tbody tr>td.play_status>i {
+    display: none;
+}
+
+.tabelview tbody tr>td.play_status>i:hover {
+    transform: scale(1.5);
+}
+
+.tabelview tbody tr.current {
+    color: var(--main-accent-color);
+}
+
+.tabelview tbody tr.current>td>i {
+    color: var(--main-lightpure-color);
+}
+
+.tabelview tbody tr.current>td.play_status>i.fa-play-circle {
+    display: block;
+}
+
+
+.tabelview tbody tr:hover {
+    background-color: var(--main-darklight-color);
+}
+
+.tabelview tbody tr:hover>td.play_status>i.fa-play-circle {
+    display: block;
+}
+
+.tabelview tbody tr.current:hover>td.play_status>i.fa-pause-circle {
+    display: inline;
+}
+
+.tabelview tbody tr.current:hover>td.play_status>i.fa-play-circle {
+    display: none;
+}
+
+/*end table view*/
